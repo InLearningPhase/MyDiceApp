@@ -30,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Random rndObj = new Random();
-                int rndImage1 = rndObj.nextInt(6);
-                int rndImage2 = rndObj.nextInt(6);
+                int rndImage = rndObj.nextInt(6);
 
-                diceImage1.setImageResource(diceImages[rndImage1]);
-                diceImage2.setImageResource(diceImages[rndImage2]);
+                diceImage1.setImageResource(diceImages[rndImage]);
+
+                rndImage = rndObj.nextInt(6);
+
+                diceImage2.setImageResource(diceImages[rndImage]);
 
             }
         });
