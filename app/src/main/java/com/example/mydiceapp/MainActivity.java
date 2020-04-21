@@ -2,6 +2,7 @@ package com.example.mydiceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button myButton = (Button)findViewById(R.id.myButton);
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.dice_sound);
+
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 rndImage = rndObj.nextInt(6);
 
                 diceImage2.setImageResource(diceImages[rndImage]);
+
+                mp.start();
 
             }
         });
