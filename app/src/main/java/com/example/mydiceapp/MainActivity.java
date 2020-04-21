@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
                 rndImage = rndObj.nextInt(6);
 
                 diceImage2.setImageResource(diceImages[rndImage]);
+
+                YoYo.with(Techniques.Shake)
+                        .duration(500)
+                        .repeat(0)
+                        .playOn(findViewById(R.id.imgdice1));
+
+                YoYo.with(Techniques.Shake)
+                        .duration(500)
+                        .repeat(0)
+                        .playOn(findViewById(R.id.imgdice2));
 
                 mp.start();
 
